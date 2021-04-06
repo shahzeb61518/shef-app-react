@@ -10,8 +10,8 @@ export default class ApiManager {
 
   // LocalHost
   // check before deploy
-  // _BASE_URL = "https://shef-node.herokuapp.com/api/";
-  _BASE_URL = "http://localhost:4003/api/";
+  _BASE_URL = "https://sheh-app-node.herokuapp.com/api/";
+  // _BASE_URL = "http://localhost:4003/api/";
 
   //USERS
   _USER_SIGNUP = "users/create";
