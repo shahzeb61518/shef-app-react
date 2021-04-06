@@ -1,0 +1,36 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/media-has-caption */
+import React, { useRef, useEffect } from "react";
+import videojs from "video.js";
+
+const VideoPlayer = (props) => {
+  const playerRef = useRef();
+
+  useEffect(() => {
+    const player = videojs(
+      playerRef.current,
+      props,
+      function onPlayerReady() {}
+    );
+    return () => {
+      player.dispose();
+    };
+  }, []);
+
+  const { className, height } = props;
+
+  return (
+    <div>
+      <div data-vjs-player>
+        <video
+          style={{ height: height ? height : "" }}
+          ref={playerRef}
+          poster='/assets/img/video/poster.jpg'
+          className={className || ""}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default VideoPlayer;
